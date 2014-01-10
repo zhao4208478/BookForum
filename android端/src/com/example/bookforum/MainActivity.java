@@ -12,6 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.view.View.OnClickListener;
+import com.example.bookforum.connect;
+
+/*
+ * write:michael zhao(zhao4208478)
+ * 登陆界面activity
+ */
 
 public class MainActivity extends Activity {
 
@@ -20,9 +26,8 @@ public class MainActivity extends Activity {
 	private String registerkey;
 	private EditText user1;
 	private EditText password1;
+
 	
-	
-	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
@@ -50,19 +55,25 @@ public class MainActivity extends Activity {
         registername = new String();
         registerkey = new String();
         
-        user1 = (EditText)findViewById(R.id.user);
-        password1 = (EditText)findViewById(R.id.password);        
+        user1 = (EditText)layout.findViewById(R.id.user);
+        password1 = (EditText)layout.findViewById(R.id.password);        
         
         Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("注册").setIcon(
                 R.drawable.ic_launcher).setView(layout);
         builder.setPositiveButton("注册", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
-            /*	Log.i("11", ""+user1);
             	registername = user1.getText().toString();
-            	Log.i("11", registername);
             	registerkey = password1.getText().toString();
-            	Log.i("11", registerkey);*/
+            	
+            	try {
+            		connect.send(registername);
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+					Log.i("11", "out: "+registername);
+				}
+            	
         }});
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             

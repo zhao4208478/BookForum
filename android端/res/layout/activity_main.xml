@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/ic_launcher"
+    android:background="@drawable/background"
     tools:context=".MainActivity" >
 
     <LinearLayout
@@ -14,7 +14,7 @@
         android:layout_height="400px"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/ic_launcher"
+        android:background="@drawable/background_border"
         android:orientation="vertical" >
         
         <LinearLayout
@@ -78,6 +78,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:id="@+id/register"
+                android:background="@drawable/background_border"
                 android:text="注册"
                 />
             <Button
@@ -86,10 +87,9 @@
                 android:gravity="center"
                 android:layout_weight="1"
                 android:layout_gravity="center"
+                android:background="@drawable/background_border"
                 android:text="登陆"
                 />
         </LinearLayout>
-        
     </LinearLayout>
-
 </RelativeLayout>
